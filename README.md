@@ -11,7 +11,6 @@ The Vehicle Builder is a command-line application built with TypeScript that all
 - [Tests](#tests)
 - [Questions](#questions)
 - [Credits](#credits)
-- [License](#license)
 
 ## Usage
 To use this application, simply run 'npm start' and follow/answer the prompts.
