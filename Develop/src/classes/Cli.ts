@@ -394,22 +394,31 @@ class Cli {
         }
         // TODO: add statements to perform the tow action only if the selected vehicle is a truck. Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument. After calling the findVehicleToTow method, you will need to return to avoid instantly calling the performActions method again since findVehicleToTow is asynchronous.
         else if (answers.action === 'Tow') {
+          let vehicle:any;
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
-              this.findVehicleToTow(this.vehicles[i] as Truck);
-            } else {
-              console.log('You can only tow with a truck');
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              vehicle = this.vehicles[i];
             }
+          }
+          if (vehicle instanceof Truck) {
+            (this.findVehicleToTow(vehicle as Truck));
+            return;
+          } else {
+            console.log('You can only tow with a truck');
           }
         }
         // TODO: add statements to perform the wheelie action only if the selected vehicle is a motorbike
         else if (answers.action === 'Wheelie') {
+          let vehicle:any;
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
-              (this.vehicles[i] as Motorbike).wheelie();
-            } else {
-              console.log('You can only perform a wheelie with a motorbike');
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              vehicle = this.vehicles[i];
             }
+          }
+          if (vehicle instanceof Motorbike) {
+            (vehicle as Motorbike).wheelie();
+          } else {
+            console.log('You can only perform a wheelie with a motorbike');
           }
         }
         else if (answers.action === 'Select or create another vehicle') {
