@@ -29,3 +29,7 @@ For any questions, please contact me at jace.galloway@gmail.com. You can also fi
 
  ## Screenrecording Video
 https://drive.google.com/drive/folders/1hynxpIaqnNPxtK27A0VFRD_BFrmI5knZ?usp=sharing
+
+## Screenshot
+
+![Screenshot 1](./Assets/images/Vehicle-Builder-CLI-Screenshot.jpg)
